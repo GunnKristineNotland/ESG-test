@@ -1,9 +1,18 @@
 :root{
-  --bg:#f9fafb;
-  --accent:#0b6efd;
-  --text:#0f1720;
-  --muted:#475569;
-  --card:#ffffff;
+  /* Primærfarge (brukerens farge) og tilhørende RGB for rgba-bruk */
+  --primary: #77DD77;
+  --primary-rgb: 119,221,119;
+
+  /* Aksent som er litt mørkere for knapper og highlights */
+  --accent: #5CC85C;
+  --accent-rgb: 92,200,92;
+
+  /* Bakgrunn følger primærfargen */
+  --bg: var(--primary);
+
+  --text: #0f1720;
+  --muted: #2f4f2f;
+  --card: #ffffff;
 }
 *{box-sizing:border-box}
 body{
@@ -19,7 +28,8 @@ body{
   padding:1rem;
 }
 .site-header{
-  background:linear-gradient(90deg, rgba(11,110,253,0.12), rgba(11,110,253,0.06));
+  /* Byttet fra blå gradient til grønne toner som matcher --accent */
+  background:linear-gradient(90deg, rgba(var(--accent-rgb),0.12), rgba(var(--accent-rgb),0.06));
   padding:1.25rem 0;
   border-bottom:1px solid rgba(15,23,32,0.05);
 }
@@ -38,7 +48,7 @@ body{
   display:inline-block;
   margin-top:0.8rem;
   padding:0.6rem 1rem;
-  background:var(--accent);
+  background:var(--accent); /* knappfarge følger primær/aksent */
   color:white;
   text-decoration:none;
   border-radius:6px;
@@ -53,6 +63,17 @@ body{
 }
 .services ul{padding-left:1.2rem}
 
+/* Kontakt-boksen bruker nå primærfargen som bakgrunn så den skiller seg ut */
+.contact{
+  background:var(--bg);
+  color:var(--text);
+  padding:1rem 1.25rem;
+  margin:1rem 0;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(15,23,32,0.03);
+}
+
+/* Footer */
 .site-footer{
   padding:1rem 0;
   text-align:center;
